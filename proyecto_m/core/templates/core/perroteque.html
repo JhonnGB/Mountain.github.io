@@ -1,0 +1,38 @@
+{% extends 'core/base.html'%}
+
+{% load static %}
+<title>{% block title %}Productos{% endblock %}</title>
+
+{% block content %}
+
+ <!--aqui va el producto-->
+ <div class="boton_regresar">
+      <a href="{% url 'inicio' %}" class="volver"><svg xmlns="http://www.w3.org/2000/svg" height="45" fill="#eef2f1" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg> REGRESAR</a>
+ </div>
+
+ <!--aqui va la descripcion del producto-->
+
+ <div class="caja-pro">
+  <div class="caja_im">
+   <img src="{{produ9.image1.url}}" alt="Imagen de comida rápida" class="image">
+  </div>
+   <div class="contenido-pro">
+     <h2 class="titulo_p">{{produ9.title}}</h2>
+     <p class="parrafo_descrip">{{produ9.descrip}}</p>
+   </div>
+ </div>
+
+<div class="valor">
+  <h2 class="precio_descrip">$ {{produ9.precio|floatformat:3}}</h2>
+  <button class="subtract-btn">-</button>
+  <input type="number" class="input-number" value="0" min="0">
+  <button class="add-btn">+</button>
+</div>
+</div>
+
+  <div class="añadir">
+  <a href="{% url 'carro:agregar' produ9.id %}" class="text-center" >AÑADIR AL CARRITO</a>
+  </div>
+{% endblock %}

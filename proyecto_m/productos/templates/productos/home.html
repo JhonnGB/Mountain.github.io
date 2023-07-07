@@ -1,0 +1,92 @@
+{% extends 'core/base.html'%}
+
+{% load static %}
+<title>{% block title %}Mountain Burger{% endblock %}</title>
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<section>
+    <h1 class="titulo_categorias">CATEGORIAS</h1>
+    <ul class="categorias">
+      <li><a href="#{{cate1.id}}"><img src="{% static 'core/img/burger.png'%}" alt="" width="30" height="30" style="margin: 5px 5px 0 0;">HAMBURGUESAS</a></li>
+      <li><a href="#{{cate2.id}}"><img src="{% static 'core/img/pancho.png'%}" alt="" width="30" height="30" style="margin: 5px 5px 0 0;"> PERROS</a></li>
+      <li><a href="#{{cate3.id}}"><img src="{% static 'core/img/papas-fritas.png'%}" alt="" width="30" height="30" style="margin: 5px 5px 0 0;">SALCHIPAPA</a></li>
+      <li><a href="#{{cate5.id}}"><img src="{% static 'core/img/picada.png'%}" alt="" width="30" height="30" style="margin: 5px 5px 0 0;">PICADA</a></li>
+      <li><a href="#{{cate6.id}}"><img src="{% static 'core/img/costillas.png'%}" alt="" width="30" height="30" style="margin: 5px 5px 0 0;">COSTILLAS Y ALITAS</a></li>
+    </ul>
+    <ul class="categorias1">
+      <li><a href="#{{cate7.id}}"><img src="{% static 'core/img/papitas.png'%}" alt="" width="30" height="30" style="margin: 0 5px 5px 0;">PORCIONES ADICIONALES</a></li>
+      </ul>
+  </section>
+  <!--aqui va datos-->
+
+    <div id="cuerpo2">
+      <div id="carta">
+        <hr style="background-color: rgb(242, 172, 41); border: dashed 10px">
+       <h2>CARTA</h2>
+      </div>
+      <div id="horario">
+       <h2>Horario: 4:00 pm 12:00 am</h2>
+      </div>
+    </div>
+    <br>
+    <hr style="background-color: rgb(242, 172, 41);border: dashed 10px">
+<!--aqui ira el carrusel de los productos y su descripcion-->
+
+
+
+{% for categoriasprod in categorias %}
+<br>
+
+<a name="{{categoriasprod.id}}"></a>
+<h2 class="title-burger">{{categoriasprod.title}}</h2>
+
+<div class="grid-container">
+  {% for hamburguesas in categoriasprod.hamburguesas_set.all %}
+<div class="grid-item">
+<img src="{{hamburguesas.image1.url}}" alt="" class="img-caja">
+<h3>{{ hamburguesas.title}}</h3>
+<p style="text-align: center;">$ {{ hamburguesas.precio|floatformat:3}}</p>
+{% if hamburguesas.link %}
+<a href="{{hamburguesas.link}}">Saber Mas</a>
+<h1 class="title-burger">{{produ.categorias.title}}</h1>
+
+{% endif %}
+</div>
+{% endfor %}
+</div>
+{% endfor %}
+<br>
+<br>
+
+<!--BOTON DE IR HACIA ARRIBA-->
+<div id="button-up">
+  <i class="fas fa-chevron-up" style="color: aliceblue;"></i> 
+</div>
+
+<script>
+document.getElementById("button-up").addEventListener("click", scrollUp);
+function scrollUp(){
+  var currentScroll = document.documentElement.scrollTop; /*me va obtener el scroll*/
+  if (currentScroll > 0){
+    window.scrollTo (0, 0);
+    buttonUp.style.transform = "scale(0)"; /*cuando se le de click al boton desaparezca*/
+  }
+}
+
+buttonUp = document.getElementById("button-up");
+
+window.onscroll = function(){
+  var scroll = document.documentElement.scrollTop;/*se guarda la posicion del scroll*/
+
+  if (scroll > 900){
+    buttonUp.style.transform = "scale(1)";
+  }
+  else if(scroll < 900){
+    buttonUp.style.transform = "scale(0)";
+  }
+}
+</script>
+{% endblock %}

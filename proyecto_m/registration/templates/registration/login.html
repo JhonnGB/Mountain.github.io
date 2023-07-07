@@ -1,0 +1,29 @@
+{% extends 'core/base.html'%}
+
+{% load static %}
+<title>{% block title %}Iniciar Sesion{% endblock %}</title>
+
+{% block content %}
+<style>.errorlist{color:red;}</style>
+    {% if 'register' in request.GET %}
+        <p style="color:green;">Se registro correctamente</p>           
+      {% endif %}
+        <form action="" method="post" class="form-register">{% csrf_token %}
+          {% if form.non_field_errors %}
+            <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
+          {% endif %}
+          <h1>Iniciar sesión</h1>
+          <p>
+            <input type="text" name="username" autofocus maxlength="254" required
+              id="id_username2" class="caja-user" placeholder="Nombre de usuario"/>
+          </p>
+          <p>
+            <input type="password" name="password" required
+              id="id_password" class="caja-user" placeholder="Contraseña"/>
+          </p>
+          <input type="submit" value="Acceder" class="botons">
+          <a href="{% url 'signup'%}" class="boton_regi">No tengo cuenta</a>
+          <a class="boton_regi" href="#">¿Olvidaste tu contraseña?</a>
+        </form>
+
+{% endblock %}

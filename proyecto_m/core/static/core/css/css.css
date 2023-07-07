@@ -1,0 +1,803 @@
+body {
+	background-color: rgba(0, 0, 0, 0.851);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6em;
+    margin: 0%;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+    
+
+  }
+
+#header-titulo2:hover {
+  transform: scale(0.9);
+}
+
+#header-titulo2{
+    text-align: center;
+    margin-left: 120px;
+    
+}
+a{
+  text-decoration: none;
+}
+#titulo1{
+  font-size:85px;
+  color: rgb(222, 147, 18);
+  font-family: 'Ultra', serif;  
+  margin-top: 30px;
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+#logo {
+  width: 140px;
+  margin-left: 30px;
+  margin: 10px;
+  
+}
+
+#cuerpo {
+  width: auto;
+  margin: 15px auto;
+  text-align: left;
+}
+
+#encabezado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 0px;
+  align-items: flex-start;
+
+}
+/*menu de navegacion*/
+nav {
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  background-color:#212529;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Viga', sans-serif;
+}
+
+.menu li {
+  position: relative;
+  margin: auto;
+  font-size: 30px;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #eef2f1;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  background-color:rgba(251, 251, 251, 0.902);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 150%;
+  border-radius: 10px;
+}
+
+.submenu li a {
+  display: block;
+  text-decoration: none;
+  color:#181919;
+  font-size: 23px;
+}
+
+.menu li:hover > .submenu {
+  display: block;
+}
+
+.submenu li:last-child a {
+  border-bottom: none;
+}
+
+.menu li:hover{
+  background-color: rgba(222, 147, 18, 0.568);
+  border-radius: 10px;
+}
+
+/*CATEGORIAS*/
+ul.categorias {
+  margin:auto;
+  list-style:none;
+  height:30px;
+  line-height:43px;
+  font-family: 'Viga', sans-serif;  
+  font-size:25px;
+  display: block;
+  letter-spacing: 2px;
+}
+
+ul.categorias li {
+  float: left;
+}
+
+ul.categorias a {
+  display:inline-flex;
+  padding:0 30px;
+  color:#eef2f1;
+  text-decoration:none;
+  background:rgba(222, 147, 18, 0.734);
+  border-radius: 30px;
+  margin: 10px;
+}
+
+ul.categorias1 {
+  margin:auto;
+  list-style:none;
+  height:30px; 
+  line-height:40px;
+  font-family: 'Viga', sans-serif;
+  font-size:25px;
+  display: block;
+  letter-spacing: 2px;
+}
+
+ul.categorias1 li {
+  float: left;
+}
+
+ul.categorias1 a {
+  display:inline-block;
+  padding:0 30px;
+  color:#eef2f1;
+  text-decoration:none;
+  background:rgba(222, 147, 18, 0.734);
+  border-radius: 30px;
+  margin: 10px;
+}
+ul.categorias a:hover,
+ul.categorias li.current a {
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  box-shadow: inset 0 0 0 3px rgba(206, 165, 15, 0.789);
+}
+ul.categorias1 a:hover,
+ul.categorias1 li.current a {
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  box-shadow: inset 0 0 0 3px  rgba(206, 165, 15, 0.789);
+}
+
+.titulo_categorias{
+  color: white;
+  font-family: 'Ultra', serif;
+  letter-spacing: 4px;
+  margin-top: 100px;
+  margin-left: 45px;
+  text-shadow: 2px 2px 2px rgb(226, 124, 16);
+  font-size: 60px;
+  text-align: left;
+}
+
+/*css para hamburguesa*/
+
+.title-burger{
+  margin-top: 40px;
+  margin-left: 60px;
+  color: white;
+  font-family: 'Ultra', serif;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 2px rgb(226, 124, 16);
+  font-size: 55px;
+  margin-bottom: 30px;
+}
+
+.title-perro{
+  margin-top: 40px;
+  margin-left: 60px;
+  color: white;
+  font-family: 'Ultra', serif;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 2px rgb(226, 124, 16);
+  font-size: 55px;
+}
+
+/*seccion*/
+#carta h2{
+  font-family: 'Ultra', serif;
+  color: white;
+  font-size: 70px;
+  letter-spacing: 5px;
+ 
+}
+#horario {
+  text-align: center;
+  font-family: 'Ultra', serif;
+  color: white;
+}
+
+#cuerpo2{
+  margin: auto;
+  text-align: center;
+  margin-top: 100px;
+}
+/*css para la opcion descripcion */
+
+.grid-container {
+  width: 95%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4,auto);
+  column-gap: 15px;
+  row-gap: 30px;
+  margin: auto;
+}
+
+.grid-item {
+  background-color: #f2f2f2e4;
+  /* padding: 10px; */
+  text-align: center;
+  width: 350px;
+  height: auto;
+}
+
+.grid-item p{
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: 'Ultra', serif;
+  color: #313131;
+  text-shadow: 1px 1px 6px #edb20f, 1px 1px 7px #edb20f;
+}
+
+.grid-item h3{
+  margin: 30px;
+  font-size: 25px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-family: 'Ultra', serif;
+}
+
+.grid-item a {
+  display: inline;
+  padding: 10px 50px;
+  background-color: #edb20f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Ultra', serif;
+  box-shadow: 1px 1px 5px 1px rgba(137, 137, 137, 0.872);
+}
+
+.img-caja {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+/*css para la pagina salchipapa1*/
+
+/*boton de regresar a home*/
+.boton_regresar .volver{
+  font-family: 'Viga', sans-serif; 
+  text-decoration: none;
+  color: #eef2f1;
+  font-size: 25px;
+}
+
+.boton_regresar{
+  margin-top: 100px;
+  margin-left: 40px;
+  display: flex;
+}
+
+
+
+/*ESTILOS PARA PODER OBSERVAR EL PRODUCTO*/
+.caja-pro{
+  margin: auto;
+  text-align: center;
+  width: 85%;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  padding: 20px;
+  background-color: #444242;
+  border-radius: 30px;
+  box-shadow:10px 20px 300px 1px rgba(224, 127, 8, 0.5);
+}
+
+.image {
+  width: 400px;
+  height: 450px;
+  object-fit: cover;
+  margin-right: 100px;
+}
+
+.contentido-pro {
+  flex-grow: 1;
+}
+
+.titulo_p{
+  text-align: left;
+  font-size: 45px;
+  font-family: 'Ultra', serif; 
+  text-shadow: 2px 2px 2px rgb(226, 124, 16);
+  color: #eef2f1;
+  margin-bottom: 30px;
+}
+.parrafo_descrip{
+  text-align: left;
+  color:#eef2f1;
+  font-size: 25px;
+  line-height: 30px;
+  margin-right: 100px;
+  font-family: 'Viga', sans-serif;
+  text-align: justify;
+}
+/**/
+
+
+/*caja de observaciones*/
+.observa{
+  display: flex;
+}
+
+.observaciones,.valor{
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+  font-family: 'Viga', sans-serif;
+
+}
+
+.observaciones{
+  margin-left: 60px;
+  margin-top: 50px;
+  font-family: 'Viga', sans-serif;
+
+}
+
+.observa_descrip{
+  color: #eef2f1;
+  text-shadow: 2px 2px 2px rgb(226, 124, 16); 
+}
+.precio_descrip{
+  margin-top: 35px;
+  color: #eef2f1;
+  font-size: 35px;
+}
+/*caja de solicitudes*/
+.caja_solicitudes{
+    width: 120%;
+		height: 100px;
+		padding: 5px;
+		box-sizing: border-box;
+		margin-bottom: 10px;
+		resize: none;
+}
+
+/*caja de cantidad*/
+
+.input-number {
+  width: 150px;
+  text-align: center;
+}
+
+.subtract-btn, .add-btn {
+  width: 40px;
+  height: 34px;
+  border: none;
+  background-color:  rgb(226, 124, 16);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.subtract-btn:hover, .add-btn:hover {
+  background-color:  rgba(226, 124, 16, 0.619);
+  color: #181919;
+}
+/*aqui va el boton de añadir al carrito*/
+.añadir{
+  margin: auto;
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Viga', sans-serif;
+}
+
+.añadir a{
+  display: inline;
+  padding: 20px 100px;
+  background-color: #edb20f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 1px 1px 5px 1px rgba(137, 137, 137, 0.872);
+}
+
+.añadir a:hover{
+  background-color: #ed9c0f;
+}
+
+.btn {
+  background-color: rgb(222, 147, 18);
+  border: none;
+  height: 60px;
+  width: 300px;
+  font-size: 20px;
+  color: #eef2f1;
+}
+
+.observa .check{
+  margin-left: 60px;
+  margin-top: 40px;
+  width: 25px;
+  height: 25px;
+}
+
+.observa label{
+  color:#eef2f1;
+  font-size: 30px;
+}
+
+footer .redes a{
+  text-decoration: unset;
+}
+
+footer .redes:hover{
+  background-color: rgba(255, 187, 0, 0.581);
+  border-radius: 10px;
+}
+
+footer{
+  font-family: 'Viga', sans-serif;
+}
+
+/*DECORACION CARRO*/
+
+#carro_p{
+  font-family: 'Viga', sans-serif;
+  margin: 0 60px 0 50px;
+}
+
+.datos_carro p{
+  margin-top: 50px;
+  font-size: 25px;
+}
+
+.datos_cant a,b{
+  line-height: 150px;
+  font-size: 25px;
+}
+.datos_borrar{
+  line-height: 150px;
+  font-size: 25px;
+}
+ /*TITULO DEL CARRO DE COMPRAS*/
+.carrito-title{
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color:rgb(222, 147, 18);
+  font-family: 'Viga', sans-serif;
+}
+.p_total{
+  margin-top: 50px;
+  text-align: left;
+  color:rgb(222, 147, 18); 
+  font-size: 28px;
+}
+
+.boton_sumar b{
+  color:rgb(222, 147, 18) ;
+  background-color: #eef2f1;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 2px 5px 2px 5px;
+
+}
+.boton_sumar:hover{
+  text-decoration: none;
+  color: #313131;
+}
+
+.boton_restar b{
+  color:rgb(222, 147, 18) ;
+  background-color: #eef2f1;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 2px 5px 2px 5px;
+}
+.boton_restar:hover{
+  text-decoration: none;
+  color: #313131;
+}
+.datos_cant .caja_cant{
+  padding: 0px 8px 0px 8px;
+}
+
+/*-------------------------BOTON ENVIAR-----------------------*/
+
+.boton-fina{
+  margin: auto;
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Viga', sans-serif;
+}
+
+.boton-fina .finalizar_b{
+  display: inline;
+  padding: 20px 100px;
+  background-color: #edb20f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 1px 1px 5px 1px rgba(137, 137, 137, 0.872);
+}
+
+.boton-fina .finalizar_b:hover{
+  background-color: #ed9c0f;
+}
+
+/*MAPA*/
+@media screen and (max-width: 768px) {
+  #mapam iframe{
+    width:100%;
+    height:300px;
+    margin-left: 60px;
+  }
+  .grid-container{
+    grid-template-columns: repeat(2,auto);
+  }
+}
+
+/*--------------------RESPONSIVE---------------------*/
+@media screen and (max-width: 992px) {
+  #mapam iframe{
+    width:100%;
+    height:300px;
+    margin-left: 50px;
+  }
+  .grid-container{
+    grid-template-columns: repeat(2,auto);
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .grid-container{
+    grid-template-columns: repeat(3,auto);
+  }
+  #mapam iframe{
+    width:100%;
+    height:300px;
+    margin-right: 100%;
+  }
+}
+/*---------------------ACERCA DE NOSOTROS---------------------------*/
+
+.titulo-acerca{
+  color: #ed9c0f;
+  margin-left: 31%;
+  font-family: 'Viga', sans-serif;
+  text-align: center;
+}
+
+.caja-conte .caja-acerca{
+  display: flex;
+  color:#fff;
+  font-size: 25px;
+}
+.caja-acerca p{
+  padding: 20px;
+  text-align: justify;
+  margin-top:50px;
+  font-family: 'Viga', sans-serif;
+  font-size: 25px;
+  line-height:37px;
+}
+.caja-acerca img{
+  width: 40%;
+  padding: 20px;
+}
+.caja-conte{
+  margin: 60px;
+}
+
+.caja-mv{
+  display: flex;
+  gap: 80px;
+  color: #fff;
+  padding: 4%;
+  text-align: center;
+}
+
+.caja-mision,.caja-vision, h1{
+  font-family: 'Viga', sans-serif;
+  color: #ed9c0f;
+  text-align: center;
+
+}
+.caja-mision, .caja-vision, p{
+  color: #fff;
+  text-align: justify;
+  font-size: 22px;
+}
+.caja-mision,.caja-vision{
+  width: 50%;
+}
+.datos_carro p{
+  text-align: center;
+}
+/*------------------------boton subir---------------------*/
+#button-up{
+  width: 60px;
+  height: 60px;
+  background: #ed9c0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  cursor: pointer;
+  border: 4px solid transparent;
+  transition: all 300ms ease;
+  transform: scale(0);
+}
+
+#button-up:hover{
+  transform: scale(1.1);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/*---------------------BOTON VACIAR CARRITO----------------*/
+.boton-vaciar{
+  display: inline;
+  padding: 12px 20px;
+  background-color: #ed590f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 1px 1px 5px 1px rgba(137, 137, 137, 0.872);
+}
+.boton-vaciar:hover{
+  background-color: #ff0000;
+}
+
+/*------------------FORMULARIO REGISTRO ------------------*/
+.errorlist{
+  color:red;
+}
+
+.form-register {
+  width: 40%;
+  background: rgba(226, 173, 75, 0.195);
+  padding: 60px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 4px;
+  font-family: 'Viga', sans-serif;
+  color: rgb(222, 147, 18);
+  box-shadow: 5px 6px 25px #be8213;
+  border: 1px solid rgb(226, 173, 75);
+}
+
+.form-register h4 {
+  color: #eef2f1;
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-family: 'Viga', sans-serif;
+
+}
+
+.form-register label{
+  color: #eef2f1;
+  font-size: 20px;
+}
+
+.form-register .helptext{
+  display: block;
+  width: 80%;
+  font-size: 15px;
+}
+
+#id_username, #id_password1, #id_password2,#id_email{
+  display:block;
+  width: 60%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #eaecef11;
+  font-family: 'Viga', sans-serif;
+  font-size: 20px;
+  color:white;
+  background:  rgba(216, 153, 34, 0.195);
+}
+
+.form-register p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.form-register a {
+  color:rgb(243, 239, 231);
+  text-decoration: none;
+}
+
+.form-register a:hover {
+  color: rgb(222, 147, 18);
+}
+
+.form-register .botons{
+  text-align: center;
+  display: block;
+  margin: auto;
+  width: 40%;
+  background: rgb(222, 147, 18);
+  border: none;
+  padding: 12px;
+  color: white;
+  margin-top: 20px;
+  font-size: 25px;
+  border-radius: 10px;
+}
+.form-register .botons:hover{
+   background-color: rgba(222, 147, 18, 0.89);
+}
+#id_username, #id_password1, #id_password2:hover{
+  border: 1px solid #181a1d;
+}
+.tipo:hover{
+  color:saddlebrown ;
+}
+/*--------------------------INICIAR SESION--------------------*/
+
+.caja-user{
+  width: 60%;
+  padding: 6px;
+}
+p{
+  margin-bottom: 30px;
+}
+.form-register .boton_regi{
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 150px;
+  font-size: .7rem;
+  color: rgb(240, 237, 226);
+  cursor: pointer;
+  text-decoration: none;
+}
+/*para que desaparezca el boton de registro*/
+#button {
+  opacity: 0.5;
+}

@@ -1,0 +1,71 @@
+<div class="caja_carrito">
+
+<table class="table table-bordered" style="color: white;">
+    <thead>
+        <tr>
+            <th>Productos</th>
+            <th>Nombre Producto</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if request.session.carro.items %}
+            {% for key, value in request.session.carro.items %}
+                <tr class="text-center">
+                    <td>
+                        <img src="{{value.imagen}}" alt="" width="150px"></td>
+
+    
+                    <td class="datos_carro"><p>{{value.nombre}}</p></td>
+
+                    <td class="datos_cant">
+                        <a href="{% url 'carro:restar' value.hamburguesas_id %}" class="boton_restar"><b>-</b></a>
+
+                        <b class="caja_cant">{{value.cantidad}}</b>
+
+                        <a href="{% url 'carro:agregar' value.hamburguesas_id %}" class="boton_sumar"><b>+</b></a>
+
+                    </td>
+                    
+                    <td>
+                        <b class="datos_precio">{{value.precio|floatformat:3}} $</b>
+                    </td>
+
+                    <td class="datos_borrar">
+                        <b><a href="{% url 'carro:eliminar' value.hamburguesas_id  %}" ><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="rgb(222, 147, 18)" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                      </svg>
+                        </td>
+                            </b>
+                                </tr>      
+            {% endfor %}
+            <tfoot>
+                <td colspan="6">
+                    <form action="{% url 'carro:limpiar' %}" method="post">
+                        {% csrf_token %}
+                            <button type="submit" class="boton-vaciar">Vaciar carrito</button>
+                </form>
+                </td>
+            </tfoot>
+        {% else %}
+            <tr>
+                <td colspan="5">
+                    <div class="alert alert-danger text-center">
+                        SIN PRODUCTOS
+                    </div>
+                </td>
+            </tr>
+        {% endif %}
+        </tbody>
+
+</table>
+{% if request.session.carro.items %}
+<p class="p_total">Total a pagar = $ {{importe_total_carro|floatformat:3}}</p>
+{% endif %}
+</div>
+<script>
+    function redirectToURL(url) {
+      window.location.href = url;
+    }
+  </script>

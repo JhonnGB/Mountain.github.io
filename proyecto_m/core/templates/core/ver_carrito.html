@@ -1,0 +1,26 @@
+{% extends 'core/base.html'%}
+
+{% load static %}
+<title>{% block title %}Mountain Burger{% endblock %}</title>
+
+{% block content %}
+<div class="boton_regresar">
+    <a href="{% url 'inicio' %}" class="volver"><svg xmlns="http://www.w3.org/2000/svg" height="45" fill="#eef2f1" class="bi bi-arrow-left" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg> Seguir Comprando</a>
+</div>
+<h1 class="carrito-title">Tu carrito</h1>
+
+<div class="caja_carrito text-center" id="carro_p">
+{% if request.user.is_authenticated %}
+    {% include "carro/widget.html" %}
+{% else %}
+    <p style="text-align: center;">¡¡INICIA SESION PARA VER TU CARRITO!!</p>
+{% endif %}
+</div>
+{% if request.session.carro.items %}
+<div class="boton-fina">
+    <a href="{% url 'pedido' %}" class="finalizar_b" >Finalizar Compra</a>
+</div>
+{% endif %}
+{% endblock %}

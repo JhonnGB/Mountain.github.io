@@ -1,0 +1,34 @@
+{% extends 'core/base.html'%}
+
+{% load static %}
+<title>{% block title %}Mountain Burger{% endblock %}</title>
+
+{% block content %}
+
+<div class="boton_regresar">
+    <a href="{% url 'inicio' %}" class="volver"><svg xmlns="http://www.w3.org/2000/svg" height="45" fill="#eef2f1" class="bi bi-arrow-left" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg></a>
+<div class="titulo-acerca">
+    <h1>ACERCA DE NOSOTROS</h1>
+</div>
+</div>
+
+<div class="caja-conte">
+    <div class="caja-acerca">
+        <img src="{% static 'core/img/acerca-de.jpeg' %}" alt="">
+        <p>{{contenidos1.contenido}}</p>
+    </div>
+</div>
+
+<div class="caja-mv">
+    <div class="caja-mision">
+        <h1>{{contenidos2.title}}</h1>
+        <p>{{contenidos2.contenido}}</p>
+    </div>
+    <div class="caja-vision">
+        <h1>{{contenidos3.title}}</h1>
+        <p>{{contenidos3.contenido}}</p>
+    </div>
+</div>
+{% endblock %}

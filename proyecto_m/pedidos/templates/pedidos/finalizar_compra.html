@@ -1,0 +1,102 @@
+{% extends 'core/base.html'%}
+
+{% load static %}
+<title>{% block title %}Finalizar Compra{% endblock %}</title>
+
+{% block content %}
+
+<div class="boton_regresar">
+  <a href="{% url 'inicio' %}" class="volver"><svg xmlns="http://www.w3.org/2000/svg" height="45" fill="#eef2f1" class="bi bi-arrow-left" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg> REGRESAR</a>
+</div>
+<br>
+      <section>
+        <div class="cuerpo3">
+          <div class="finali">
+           <h2>Finalizacion de tu pedido</h2>
+          </div>
+          <div class="codigo">
+           <h2>Codigo de compra:  </h2>
+          </div>
+      </section>
+
+      {% if 'ok' in request.GET %}
+        <p style="color: aliceblue;">SU MENSAJE FUE ENVIADO CORRECTAMENTE</p> 
+      {% endif %}
+
+      <form action="" method="POST">
+        {% csrf_token %}
+      <section class="secciones">
+      <div class="caja1">
+        <div class="caja_for1">
+        <label>Correo Electronico</label>
+          {{form.email}}
+          {{form.email.errors}}
+        <label>Nombre De Quien Recibe</label>
+          {{form.name}}
+          {{form.name.errors}}
+        <label>Telefono De Quien Recibe</label>
+          {{form.telefono}}
+          {{form.telefono.errors}}
+        </div>
+
+        <div class="caja_for2">
+          <!--<label for="validationDefault04" class="form-label">Forma De Entrega</label>
+          <select class="form-select" id="validationDefault04"required style="background-color:rgba(222, 147, 18, 0.58); color: aliceblue;">
+            <option selected disabled value="" style="color:black;">Opciones</option>
+            {% for choice in form.entrega %}
+            <option class="tipo" style="color:black;">{{ choice.choice_label }}</option>
+            {{form.entrega.errors}}
+            {% endfor %}
+          </select>-->
+          <label> Forma De Entrega:</label>
+          {{form.entregas}}
+          {{form.entregas.errors}}
+          <label> Direccion de Entrega y barrio</label>
+          {{form.direccion}}
+          {{form.direccion.errors}}
+          <label>Indicaciones Adiccionales</label>
+          {{form.indicaciones}}
+          {{form.indicaciones.errors}}
+        </div>
+      </div>
+      </section>
+
+
+      <section class="secciones1">
+        <div class="caja2">
+          <div class="caja_for3">
+            <!--<label for="validationDefault04" class="form-label">¿Como quieres pagar?</label>
+            <select class="form-select" id="validationDefault04" required style="background-color: rgba(222, 147, 18, 0.58); color: aliceblue;">
+              <option selected disabled value="" style="color:black;">pagos</option>
+              {% for choice in form.pago %}
+              <option class="tipo" value="1" style="color:black;">{{ choice.choice_label }}</option>
+              {{form.pago.errors}}
+              {% endfor %}
+            </select>-->    
+          <label>Forma de pago:</label>
+          {{form.pagos}}
+          {{form.pagos.errors}}
+<br>
+        <p class="domi" style="color: aliceblue;">Tu domicilio sera cobrado en el momento de la entrega</p>
+        <div class="caja_carro text-center">
+          {% include "carro/widget.html" %}
+        </div>
+          </div>
+        
+        <div id="caja_for4">
+          <ol style="color: aliceblue;">
+            <strong style="color: black;">Si tu opcion fue nequi, sigue estos pasos:</strong><br>
+       <li>Telefono : 314 412 66 68 <br></li>
+       <li>En la opcion "¿cuanto?": Ingresa el total a pagar, si hace falta no se entregara el domicilio </li>
+      <li>Donde dice "mensaje", agrega el codigo de la compra que aparece en la parte superior de la pagina</li>
+    listo!
+  </ol>
+        </div>
+        </section>
+        <div class="boton_enviar">
+          <input type="submit" class="btn btn-warning" value="Enviar Pedido"/>
+        </div>
+</form>
+{% endblock %}
